@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+background:#f4f4f4;
+padding:40px;
+}
+
+/* FILTER BUTTONS */
+
+.filter-buttons{
+text-align:center;
+margin-bottom:30px;
+}
+
+.filter-buttons button{
+padding:10px 20px;
+margin:5px;
+border:none;
+background:#333;
+color:white;
+cursor:pointer;
+border-radius:5px;
+transition:0.3s;
+}
+
+.filter-buttons button:hover{
+background:#555;
+transform:scale(1.05);
+}
+
+/* GALLERY GRID */
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+max-width:1100px;
+margin:auto;
+}
+
+/* IMAGE CARD */
+
+.image-card{
+position:relative;
+overflow:hidden;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+transition:transform 0.3s;
+}
+
+.image-card img{
+width:100%;
+height:200px;
+object-fit:cover;
+display:block;
+transition:transform 0.4s ease;
+}
+
+/* IMAGE ZOOM */
+
+.image-card:hover img{
+transform:scale(1.1);
+}
+
+/* OVERLAY EFFECT */
+
+.overlay{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+color:white;
+display:flex;
+justify-content:center;
+align-items:center;
+opacity:0;
+transition:opacity 0.3s ease;
+font-size:18px;
+}
+
+.image-card:hover .overlay{
+opacity:1;
+}
+
+/* CARD LIFT EFFECT */
+
+.image-card:hover{
+transform:translateY(-5px);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- FILTER BUTTONS -->
+
+<div class="filter-buttons">
+<button data-filter="all">All</button>
+<button data-filter="nature">Nature</button>
+<button data-filter="people">People</button>
+<button data-filter="abstract">Abstract</button>
+</div>
+
+<!-- GALLERY -->
+
+<div class="gallery">
+
+<div class="image-card" data-category="nature">
+<img src="https://picsum.photos/400/300?random=1">
+<div class="overlay">Nature</div>
+</div>
+
+<div class="image-card" data-category="people">
+<img src="https://picsum.photos/400/300?random=2">
+<div class="overlay">People</div>
+</div>
+
+<div class="image-card" data-category="abstract">
+<img src="https://picsum.photos/400/300?random=3">
+<div class="overlay">Abstract</div>
+</div>
+
+<div class="image-card" data-category="nature">
+<img src="https://picsum.photos/400/300?random=4">
+<div class="overlay">Nature</div>
+</div>
+
+<div class="image-card" data-category="people">
+<img src="https://picsum.photos/400/300?random=5">
+<div class="overlay">People</div>
+</div>
+
+<div class="image-card" data-category="abstract">
+<img src="https://picsum.photos/400/300?random=6">
+<div class="overlay">Abstract</div>
+</div>
+
+</div>
+
+</body>
+</html>
